@@ -1,0 +1,169 @@
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.textofer {
+  -webkit-animation: animationName 2s ease 0s infinite normal;
+  /* Safari 4+ */
+  -moz-aanimation: animationName 2s ease 0s infinite normal;
+  /* Fx 5+ */
+  -o-animation: animationName 2s ease 0s infinite normal;
+  /* Opera 12+ */
+  animation: animationName 2s ease 0s infinite normal;
+}
+
+.textofer:hover {
+  -webkit-animation-play-state: paused;
+  -moz-animation-play-state: paused;
+  -o-animation-play-state: paused;
+  animation-play-state: paused;
+  cursor: pointer;
+}
+
+@-webkit-keyframes animationName {
+  0% {
+      color: rgb(214, 16, 16);
+  }
+  25% {
+      color: rgb(0, 0, 0);
+  }
+  50% {
+      color: rgb(214, 16, 16);
+  }
+  75% {
+      color: rgb(0, 0, 0);
+  }
+  100% {
+      color: rgb(214, 16, 16);
+  }
+}
+
+@-moz-keyframes animationName {
+  0% {
+      color: rgb(214, 16, 16);
+  }
+  25% {
+      color: rgb(0, 0, 0);
+  }
+  50% {
+      color: rgb(214, 16, 16);
+  }
+  75% {
+      color: rgb(0, 0, 0);
+  }
+  100% {
+      color: rgb(214, 16, 16);
+  }
+}
+
+@-o-keyframes animationName {
+  0% {
+      color: rgb(214, 16, 16);
+  }
+  25% {
+      color: rgb(0, 0, 0);
+  }
+  50% {
+      color: rgb(214, 16, 16);
+  }
+  75% {
+      color: rgb(0, 0, 0);
+  }
+  100% {
+      color: rgb(214, 16, 16);
+  }
+}
+
+@keyframes animationName {
+  0% {
+      color: rgb(214, 16, 16);
+  }
+  25% {
+      color: rgb(0, 0, 0);
+  }
+  50% {
+      color: rgb(214, 16, 16);
+  }
+  75% {
+      color: rgb(0, 0, 0);
+  }
+  100% {
+      color: rgb(214, 16, 16);
+  }
+}
+
+.logoNav{
+  border-radius: 200px;
+  margin: auto;
+  height: 200px;
+}
+.container-liss{
+
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  width: 100% !important;
+  display: flex;
+}
+h1{
+
+  margin: auto;
+  margin: 115px;
+}
+img{
+  padding: 15px;
+}
+
+.formulario{
+border-radius: 8px;
+border: #282c34 solid;
+
+}
+.buton{
+align-items: center;
+justify-content: center;
+
+
+}
+
+.img{
+width: 270px;
+height: 300px;
+display: flex;
+
+
+}
