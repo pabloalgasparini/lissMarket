@@ -2,14 +2,11 @@ import { pedidosTypes } from "./pedidosTypes";
 
 export const pedidosReducer = (pedidosState, action)=>{
 
-    const {payload} = action;
-    switch (action.type) {
+    switch (action.type) {  
         
         case pedidosTypes.addPedido:
-            return {
-                ...pedidosState.pedidos,
-                payload
-            }
+            return [...pedidosState
+                , action.payload];
 
     
         default:

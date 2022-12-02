@@ -13,7 +13,7 @@ import { PedidoContext } from './context/pedidosContext/PedidoContext';
 function App() {
   const [session, setSession] = useState(Session);
   
-  const getPedidos = ()=> JSON.parse(localStorage.getItem("pedidos")) || {}
+  const getPedidos = ()=> JSON.parse(localStorage.getItem("pedidos")) || []
   
   const [pedidosState, pedidosDispatch] = useReducer(pedidosReducer, [], getPedidos)
 

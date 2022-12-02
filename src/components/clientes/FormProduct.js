@@ -77,11 +77,11 @@ const capturarId=(e) => setPedidos(e.target.value);
     </Form.Select> */}
   
       
-        <div className='ms-sm-5 me-sm-4 me-2 py-5 ps-5'>
+        <div className='ms-sm-3 me-sm-4 me-2 py-5 ps-5'>
         <div className='row w-md-75 ms-auto'>
           {mostrar.length > 1&&mostrar?.map((item, index) => (
             
-            <div className='col-12 col-md-4 col-lg-3 mb-3' key={item._id}>
+            <div className='col-8 col-md-2 col-lg-3 mb-2' key={item._id}>
               <Card  className='' key={item._id}>
                 <Card.Title className='text-center'>Producto</Card.Title>
                 <div className='container py-3 px-4'>

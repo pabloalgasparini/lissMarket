@@ -6,12 +6,12 @@ import { pedidosTypes } from '../../context/pedidosContext/pedidosTypes'
 
 
 function Pedido() {
-
+    const [mensaje,setMensaje]=useState('')
     const {idpedido} = useParams()
     const [pedido, setPedido] = useState({})
 
     const {pedidosState, pedidosDispatch} = useContext(PedidoContext)
-
+    const [state,setState] = useContext({state})
     const consulta = async () => {
  
         var myHeaders = new Headers();
@@ -27,21 +27,36 @@ function Pedido() {
 
         const productoPedido = respuesta.producto.filter(producto=> producto._id === idpedido)
 
-        pedidosDispatch({type: pedidosTypes.addPedido, payload: productoPedido})
+        console.log(productoPedido[0]);
 
-       
+        localStorage.setItem("pedidos", JSON.stringify([...pedidosState, productoPedido[0]]))
+        pedidosDispatch({type: pedidosTypes.addPedido, payload: productoPedido[0]}) 
+
+       setPedido(productoPedido[0]);
+       console.log(state.usuario)
     }
     
     useEffect(()=>{
         consulta()
         
     },[])
-    useEffect(()=>{
-          localStorage.setItem("pedidos", JSON.stringify(pedidosState));
-      }, [])
-      console.log(pedidosState);
+    
+      // console.log(pedidosState);
   return (
-    <div>Pedido</div>
+    
+// <div>Pedido</div>
+
+    <div className="col-md-12">
+   <form action="https://formsubmit.co/pabloalgasparini@gmail.com" method="POST">
+     <input type="text" name="name" placeholder={pedido.nombreProducto}/>
+     <input type="email" name="email"placeholder='pabloalgasparini@gmail.com'/>
+     <button type="submit">Send</button>
+    </form>
+
+    </div>
+
+ 
+
   )
 }
 
