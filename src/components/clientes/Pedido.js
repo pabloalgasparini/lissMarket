@@ -7,11 +7,12 @@ import { pedidosTypes } from '../../context/pedidosContext/pedidosTypes'
 
 function Pedido() {
     const [mensaje,setMensaje]=useState('')
+    const [lista,setLista]= useState()
     const {idpedido} = useParams()
     const [pedido, setPedido] = useState({})
 
     const {pedidosState, pedidosDispatch} = useContext(PedidoContext)
-    const [state,setState] = useContext({state})
+    
     const consulta = async () => {
  
         var myHeaders = new Headers();
@@ -33,14 +34,37 @@ function Pedido() {
         pedidosDispatch({type: pedidosTypes.addPedido, payload: productoPedido[0]}) 
 
        setPedido(productoPedido[0]);
-       console.log(state.usuario)
+       console.log(pedidosState)
+        
+     
     }
     
     useEffect(()=>{
         consulta()
         
     },[])
-    
+    const comprar =async()=>{
+
+    const opciones={
+      method: 'POST',
+      headers:{'Content-Type': 'application/json'}
+    }
+
+  setLista(pedidosState)
+
+    opciones.body=JSON.stringify(lista)
+    const res = await fetch('http://localhost:3000/publicaciones',opciones)
+    const data = res.json()
+    console.log(data)
+
+      
+
+      pedidosState.map((item)=>(
+      
+        console.log(item.nombreProducto)
+      ))
+      
+     }
       // console.log(pedidosState);
   return (
     
@@ -51,6 +75,8 @@ function Pedido() {
      <input type="text" name="name" placeholder={pedido.nombreProducto}/>
      <input type="email" name="email"placeholder='pabloalgasparini@gmail.com'/>
      <button type="submit">Send</button>
+     <button type="button" onClick={comprar}>Comprar</button>
+
     </form>
 
     </div>
